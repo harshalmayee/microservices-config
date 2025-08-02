@@ -10,9 +10,6 @@ spring:
   sql:
     init:
       mode: always
-  config:
-    import:
-      - "optional:configserver:http://localhost:8071/"
 
 build:
   version: "2.0"
