@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: payment-initiator
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:broker:9092}
+
+server:
+  port: ${PORT:8097}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics,prometheus"
+
+info:
+  app:
+    description: Payment Initiator Microservice
+    version: 1.0
+
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8070/eureka/}
