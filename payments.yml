@@ -15,12 +15,6 @@ management:
       exposure:
         include: "health,info,metrics,prometheus"
 
-payment:
-  provider: fake # values: fake, razorpay
-  razorpay:
-    key: ${RAZORPAY_KEY:}
-    secret: ${RAZORPAY_SECRET:}
-
 eureka:
   instance:
     hostname: localhost
